@@ -1,14 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,100,0.6) 0%, rgba(0,36,61,0.6) 50%);">
+<div class="banner" style="background-color: grey">
   <div class="banner-content">
     <h1>Jorj's cock_tails</h1>
     <p>Long drinks for short people</p>
-    <%= link_to "<Do your best>", new_cocktail_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to "Give your best $hott", new_cocktail_path, class: "btn btn-danger btn-lg" %>
   </div>
 </div>
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-12 col-md-6 col-lg-3">
+      <div class="col-12 col-md-6 col-lg-3 mt-3">
         <div class="card">
           <div class="card-description">
             <h2><%= cocktail.name %></h2>
