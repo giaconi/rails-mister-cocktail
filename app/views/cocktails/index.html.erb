@@ -1,21 +1,26 @@
-<div class="banner" style="background-color: grey">
-  <div class="banner-content">
+ <div class="container">
+  <div class="banner" style="background-color: grey">
     <h1>Jorj's cock_tails</h1>
     <p>Long drinks for short people</p>
     <%= link_to "Give your best $hott", new_cocktail_path, class: "btn btn-danger btn-lg" %>
   </div>
-</div>
-<div class="container">
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-12 col-md-6 col-lg-3 mt-3">
-        <div class="card">
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-12 col-md-6 col-lg-3 mt-4">
+          <div class="card">
+            <div class="container">
+                <h2><%= cocktail.name %></h2>
+                <% if cocktail.photo.attached? %>
+                  <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+                <% end %>
+            </div>
+            <%= link_to "Try it!", cocktail_path(cocktail), class: 'card-link' %>
           </div>
-          <%= link_to "Try", cocktail_path(cocktail), class: 'card-link' %>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
 </div>
+</div>
+
+<!-- width: 250, height: 500, -->
